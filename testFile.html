@@ -5,6 +5,21 @@
 	<title>测试上传</title>
 </head>
 <body>
-	<input type="file">
+	<!-- <input type="file"> -->
+	<button id="aa">复             制</button>
+	<script>
+		var oBtn = document.getElementById('aa');
+		aa.onclick = function () {
+			const input = document.createElement('input')
+	        document.body.appendChild(input)
+	        input.setAttribute('value','1237890345')
+	        input.select()
+	        if (document.execCommand('copy')) {
+	          document.execCommand('copy')
+	          alert('复制成功！')
+	        }
+	        document.body.removeChild(input)
+		}
+	</script>
 </body>
 </html>
