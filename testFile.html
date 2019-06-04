@@ -18,6 +18,14 @@
 			border: 1px solid #000;  //自定义边框
 			outline: none;    //消除默认点击蓝色边框效果
 		}
+		input {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			margin-left: -150px;
+			width: 300px;
+			height: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -25,6 +33,7 @@
 	<div>1234444
 		<button id="aa">复             制</button>
 	</div>
+	<input type="text">
 	<script>
 		var oBtn = document.getElementById('aa');
 		aa.onclick = function () {
@@ -38,6 +47,32 @@
 	        }
 	        document.body.removeChild(input)
 		}
+		var bb = platform();
+		console.log(navigator.userAgent)
+		
+		function platform(){
+		    // Browser environment sniffing
+		    var inBrowser = typeof window !== 'undefined';
+		    var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+		    console.log(window.navigator.userAgent.toLowerCase())
+		    var isIE = UA && /msie|trident/.test(UA);
+		    var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+		    var isEdge = UA && UA.indexOf('edge/') > 0;
+		    var isAndroid = UA && UA.indexOf('android') > 0;
+		    var isIOS = UA && /iphone|ipad|ipod|ios/.test(UA);
+		    var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+		    return {
+		        isIOS,
+		        isAndroid,
+		        isChrome
+		    }
+		}
+
+	function initMonth () { // 获取当前月份并初始化
+      let date = new Date()
+      return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+    }
+    console.log(initMonth());
 	</script>
 </body>
 </html>
