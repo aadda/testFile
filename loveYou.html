@@ -13,7 +13,7 @@
     .pic {
         width: 100%;
         height: 667px;
-        /* background: url(./1.jpg) no-repeat; */
+        background: url(./1.jpg) no-repeat;
         background-size: 100% 100%;
     }
     .write {
@@ -38,20 +38,21 @@
 <body>
     <div class="pic">
         <div class="write">
-            <p>
-                1 111 1111 1111
-            </p>
-            <p>
-                11111111111111111
-            </p>
-            <p>
-                1111,1111!
-            </p>
+                <p>
+                        I love you my baby
+                    </p>
+                    <p>
+                        往后余生，邱翠女士请多指教。
+                    </p>
+                    <p>
+                        风里雨里，我都陪你！
+                    </p>
         </div>
         <audio id='music' src="1.mp3" controls="controls" autoplay="autoplay" loop="loop" preload="auto"></audio>
     </div>
 <script>
     var music = document.getElementById("music");
+
      if(window.WeixinJSBridge){
 
         WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
