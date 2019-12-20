@@ -48,9 +48,31 @@
                 1111,1111!
             </p>
         </div>
-        <audio src="1.mp3" controls="controls" autoplay="autoplay" loop="loop" preload="auto"></audio>
+        <audio id='music' src="1.mp3" controls="controls" autoplay="autoplay" loop="loop" preload="auto"></audio>
     </div>
 <script>
+    var music = document.getElementById("music");
+     if(window.WeixinJSBridge){
+
+        WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+
+            music.play();
+
+        }, false);
+
+        }else{
+
+        document.addEventListener("WeixinJSBridgeReady", function() {
+
+        WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+
+            music.play();
+
+        });
+
+        }, false);
+
+        }
 </script>
 </body>
 
